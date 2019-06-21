@@ -6,16 +6,18 @@
 
 <h2>All Customers</h2>
 
-<table class="table">
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Customers</th>
+            <th>Discount Rate</th>
         </tr>
     </thead>
     @foreach (var customer in Model)
     {
     <tr>
         <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+        <td>@customer.Membership.DiscountRate<text>%</text></td>
     </tr>
     }
 </table>

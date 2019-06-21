@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -25,7 +26,9 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList();
+            // .Include(c => c.Membership) // eager loading - loading related objects 
+            // by default entity framework only loads customer (main) object
+            var customers = _context.Customers.Include(c => c.Membership).ToList();
             return View(customers);
         }
 
