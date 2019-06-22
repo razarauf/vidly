@@ -29,6 +29,7 @@ namespace Vidly.Controllers
             // .Include(c => c.Membership) // eager loading - loading related objects 
             // by default entity framework only loads customer (main) object
             var customers = _context.Customers.Include(c => c.Membership).ToList();
+
             return View(customers);
         }
 
