@@ -23,5 +23,7 @@ namespace Vidly.Models
 
         // foreign key - not loading the whole object as above
         public byte MembershipTypeId { get; set; }
+
+        public DateTime? Birthdate { get; set; }
     }
 }

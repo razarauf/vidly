@@ -9,4 +9,9 @@
 @if (Model != null)
 {
     <h4>@Model.Name</h4>
+    if (Model.Birthdate.HasValue)
+    {
+        <p>Membership Type: @Model.Membership.Name</p>
+        <p>Birthdate: @Model.Birthdate.Value.ToShortDateString()</p>
+    }
 }
