@@ -223,6 +223,38 @@
     <Compile Include="Migrations\201906250117490_SeedGenreTable.Designer.cs">
       <DependentUpon>201906250117490_SeedGenreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906250152419_ChangeMovieTable.cs" />
+    <Compile Include="Migrations\201906250152419_ChangeMovieTable.Designer.cs">
+      <DependentUpon>201906250152419_ChangeMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906250159366_ReAddMovieTable.cs" />
+    <Compile Include="Migrations\201906250159366_ReAddMovieTable.Designer.cs">
+      <DependentUpon>201906250159366_ReAddMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906250201357_DeleteMovieTable.cs" />
+    <Compile Include="Migrations\201906250201357_DeleteMovieTable.Designer.cs">
+      <DependentUpon>201906250201357_DeleteMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906250204483_Re-AddMoviesTable.cs" />
+    <Compile Include="Migrations\201906250204483_Re-AddMoviesTable.Designer.cs">
+      <DependentUpon>201906250204483_Re-AddMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906250208442_AddGenretoMovies.cs" />
+    <Compile Include="Migrations\201906250208442_AddGenretoMovies.Designer.cs">
+      <DependentUpon>201906250208442_AddGenretoMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906260043192_FixGenre.cs" />
+    <Compile Include="Migrations\201906260043192_FixGenre.Designer.cs">
+      <DependentUpon>201906260043192_FixGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906260048599_AddMovieV3.cs" />
+    <Compile Include="Migrations\201906260048599_AddMovieV3.Designer.cs">
+      <DependentUpon>201906260048599_AddMovieV3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906260056495_SeedGenreTable1.cs" />
+    <Compile Include="Migrations\201906260056495_SeedGenreTable1.Designer.cs">
+      <DependentUpon>201906260056495_SeedGenreTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -347,6 +379,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906250117490_SeedGenreTable.resx">
       <DependentUpon>201906250117490_SeedGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250152419_ChangeMovieTable.resx">
+      <DependentUpon>201906250152419_ChangeMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250159366_ReAddMovieTable.resx">
+      <DependentUpon>201906250159366_ReAddMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250201357_DeleteMovieTable.resx">
+      <DependentUpon>201906250201357_DeleteMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250204483_Re-AddMoviesTable.resx">
+      <DependentUpon>201906250204483_Re-AddMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250208442_AddGenretoMovies.resx">
+      <DependentUpon>201906250208442_AddGenretoMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906260043192_FixGenre.resx">
+      <DependentUpon>201906260043192_FixGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906260048599_AddMovieV3.resx">
+      <DependentUpon>201906260048599_AddMovieV3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906260056495_SeedGenreTable1.resx">
+      <DependentUpon>201906260056495_SeedGenreTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

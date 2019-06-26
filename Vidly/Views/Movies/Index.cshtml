@@ -12,18 +12,18 @@
 }
 else
 {
-    <table>
+    <table class="table table-bordered table-hover">
         <tr>
             <th>Movie</th>
             <th>Genre</th>
         </tr>
-    </table>
-    foreach (var eachMovie in Model)
-    {
+        @foreach (var eachMovie in Model)
+        {
         <tr>
-            <td>@Html.ActionLink(eachMovie.Title, "Details", "Movies", new { Id = eachMovie.Id }, null )</td>
+            <td>@Html.ActionLink(eachMovie.Name, "Details", "Movies", new { Id = eachMovie.Id }, null)</td>
             <td>@eachMovie.Genre.Name</td>
         </tr>
-    }
+        }
+    </table>
 }
 

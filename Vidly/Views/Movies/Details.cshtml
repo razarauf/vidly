@@ -4,11 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Movie Details</h2>
+<br />
 @if (Model != null)
 {
-    <h4>@Model.Title</h4>
-    <p>@Model.ReleaseDate.ToShortDateString()</p>
-    <p>@Model.DateAdded.ToShortDateString()</p>
-    <p>@Model.NumberInStock</p>
+    <h4>@Model.Name</h4>
+    <p>Genre: @Model.Genre.Name</p>
+    <p>Release Date: @Model.ReleaseDate.ToShortDateString()</p>
+    <p>Date Added: @Model.DateAdded.ToShortDateString()</p>
+    <p>Number In Stock: @Model.NumberInStock</p>
 }
