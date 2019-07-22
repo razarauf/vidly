@@ -45,13 +45,10 @@ namespace Vidly.Controllers
 
         public ActionResult New ()
         {
-            var membershipTypes = _context.MembershipTypes.ToList();
-            var customer = new Customer();
-
             var customerViewModel = new CustomerFormViewModel()
             {
-                Customer = customer,
-                MembershipTypes = membershipTypes
+                Customer = new Customer(),
+                MembershipTypes = _context.MembershipTypes.ToList()
             };
 
             return View("CustomerForm", customerViewModel);
@@ -77,34 +74,47 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
-            if (customer.Id == 0)
+            if (!ModelState.IsValid)
             {
-                _context.Customers.Add(customer);
+                var customViewMode = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", customViewMode);
             }
             else
             {
-                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                if (customer.Id == 0)
+                {
+                    _context.Customers.Add(customer);
+                }
+                else
+                {
+                    var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
 
-                // Approach #1: 
-                // official microsoft suggest the following with property names whitelisted
-                // but "magic strings":
-                // TryUpdateModel(customerInDb, string.Empty, new string[] { "Name", "Email" });
+                    // Approach #1: 
+                    // official microsoft suggest the following with property names whitelisted
+                    // but "magic strings":
+                    // TryUpdateModel(customerInDb, string.Empty, new string[] { "Name", "Email" });
 
-                //Approach #2: manually set each individual library
-                customerInDb.Name = customer.Name;
-                customerInDb.Birthdate = customer.Birthdate;
-                customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                    //Approach #2: manually set each individual library
+                    customerInDb.Name = customer.Name;
+                    customerInDb.Birthdate = customer.Birthdate;
+                    customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                    customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
 
-                //Approach #3: auto-mapper
-                // Mapper.Map(customer, customerInDb);
-                // pass a "data transfer object" to action which only includes properties that
-                // needed to updated
+                    //Approach #3: auto-mapper
+                    // Mapper.Map(customer, customerInDb);
+                    // pass a "data transfer object" to action which only includes properties that
+                    // needed to updated
+                }
+
+                _context.SaveChanges();
+
+                return RedirectToAction("Index", "Customers");
             }
-
-            _context.SaveChanges();
-
-            return RedirectToAction("Index", "Customers");
         }
     }
 }
