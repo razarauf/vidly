@@ -23,10 +23,10 @@ namespace Vidly.Models
 
         // foreign key - not loading the whole object as above
         [Display(Name="Membership Type")]
-        [Min18YearsIfAMember]
         public byte MembershipTypeId { get; set; }
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 
         public static readonly byte Unknown = 0;
